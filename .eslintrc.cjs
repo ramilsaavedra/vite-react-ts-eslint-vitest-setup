@@ -31,5 +31,15 @@ module.exports = {
   plugins: ['@typescript-eslint', 'react', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 0,
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '**/*.test.tsx',
+          '**/setupTests.ts',
+          '**/*.config.ts',
+        ],
+      },
+    ],
   },
 }
